@@ -1,24 +1,19 @@
 #!/bin/bash
 
-CLOUDGENE_VERSION=1.29.0
+CLOUDGENE_VERSION=1.30.1
 if [ -n "$1" ]; then
   CLOUDGENE_VERSION="$1"
 fi
 
 set -e
 
-CLOUDGENE_URL=https://imputationserver.sph.umich.edu/static/downloads
-CLOUDGENE_INSTALLER_URL=${CLOUDGENE_URL}/cloudgene-installer-${CLOUDGENE_VERSION}.sh
-
-# github
-# CLOUDGENE_VERSION=v1.27.0
-# CLOUDGENE_URL=https://github.com/lukfor/cloudgene/releases/download
-# CLOUDGENE_INSTALLER_URL=${CLOUDGENE_URL}/${CLOUDGENE_VERSION}/cloudgene-installer.sh
+CLOUDGENE_URL=https://github.com/genepi/cloudgene/releases/download
+CLOUDGENE_INSTALLER_URL=${CLOUDGENE_URL}/v${CLOUDGENE_VERSION}/cloudgene-installer.sh
 
 echo "Installing Cloudgene ${CLOUDGENE_VERSION}..."
 
 echo "Downloading Cloudgene ${CLOUDGENE_INSTALLER_URL}..."
-curl -f ${CLOUDGENE_INSTALLER_URL} -o cloudgene-installer.sh
+curl -fL ${CLOUDGENE_INSTALLER_URL} -o cloudgene-installer.sh
 
 # execute installer
 chmod +x ./cloudgene-installer.sh
