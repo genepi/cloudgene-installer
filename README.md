@@ -11,5 +11,5 @@ curl -s install.cloudgene.io | bash
 ## Install specific release
 
 ```sh
-curl -s install.cloudgene.io | bash -s 1.29.0
+curl -s install.cloudgene.io | bash -s 2.1.3
 ```
